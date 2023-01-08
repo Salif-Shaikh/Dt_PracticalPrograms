@@ -1,0 +1,245 @@
+**********
+> use WorldCup
+switched to db WorldCup
+> db.createCollection("Game",{})
+{ "ok" : 1 }
+> db.createCollection("Player",{})
+{ "ok" : 1 }
+***********
+
+> db.Game.insert({"Gname":"Cricket","Year":"2019","Event":"IPL"})
+WriteResult({ "nInserted" : 1 })
+> db.Game.insert({"Gname":"Cricket","Year":"2019","Event":"ICC Cricket World Cup(ODI)"})
+WriteResult({ "nInserted" : 1 })
+> db.Game.insert({"Gname":"Cricket","Year":"2019","Event":"ICC Cricket World Cup(T20)"})
+WriteResult({ "nInserted" : 1 })
+> db.Game.insert({"Gname":"Cricket","Year":"2018","Event":"Indoor Cricket Wolrd Cup"})
+WriteResult({ "nInserted" : 1 })
+> db.Game.insert({"Gname":"Cricket","Year":"2018","Event":"Blind Cricket World Cup"})
+WriteResult({ "nInserted" : 1 })
+> db.Game.insert({"Gname":"Football","Year":"2015","Event":"FIFA World Cup"})
+WriteResult({ "nInserted" : 1 })
+> db.Game.insert({"Gname":"Football","Year":"2015","Event":"FIFA Club World Cup"})
+WriteResult({ "nInserted" : 1 })
+> db.Game.insert({"Gname":"Football","Year":"2015","Event":"ConIFA World Football Cup"})
+WriteResult({ "nInserted" : 1 })
+> db.Game.insert({"Gname":"Badminton","Year":"2018","Event":"Badminton BWF World Championship "})
+WriteResult({ "nInserted" : 1 })
+> db.Game.insert({"Gname":"Badminton","Year":"2018","Event":"Badminton Thomas Cup"})
+WriteResult({ "nInserted" : 1 })
+
+> db.Game.find().pretty()
+{
+        "_id" : ObjectId("5dda37acd4ec526655512c92"),
+        "Gname" : "Cricket",
+        "Year" : "2019",
+        "Event" : "IPL"
+}
+{
+        "_id" : ObjectId("5dda3870d4ec526655512c93"),
+        "Gname" : "Cricket",
+        "Year" : "2019",
+        "Event" : "ICC Cricket World Cup(ODI)"
+}
+{
+        "_id" : ObjectId("5dda3881d4ec526655512c94"),
+        "Gname" : "Cricket",
+        "Year" : "2019",
+        "Event" : "ICC Cricket World Cup(T20)"
+}
+{
+        "_id" : ObjectId("5dda38a1d4ec526655512c95"),
+        "Gname" : "Cricket",
+        "Year" : "2018",
+        "Event" : "Indoor Cricket Wolrd Cup"
+}
+{
+        "_id" : ObjectId("5dda38e1d4ec526655512c96"),
+        "Gname" : "Cricket",
+        "Year" : "2018",
+        "Event" : "Blind Cricket World Cup"
+}
+{
+        "_id" : ObjectId("5dda3907d4ec526655512c97"),
+        "Gname" : "Football",
+        "Year" : "2015",
+        "Event" : "FIFA World Cup"
+}
+{
+        "_id" : ObjectId("5dda3919d4ec526655512c98"),
+        "Gname" : "Football",
+        "Year" : "2015",
+        "Event" : "FIFA Club World Cup"
+}
+{
+        "_id" : ObjectId("5dda3939d4ec526655512c99"),
+        "Gname" : "Football",
+        "Year" : "2015",
+        "Event" : "ConIFA World Football Cup"
+}
+{
+        "_id" : ObjectId("5dda397fd4ec526655512c9a"),
+        "Gname" : "Badminton",
+        "Year" : "2018",
+        "Event" : "Badminton BWF World Championship "
+}
+{
+        "_id" : ObjectId("5dda398bd4ec526655512c9b"),
+        "Gname" : "Badminton",
+        "Year" : "2018",
+        "Event" : "Badminton Thomas Cup"
+}
+*******************
+
+> db.Player.insert({"Pname":"Ronaldo","age":"35","Gname":"Football","Year":"2019"})
+WriteResult({ "nInserted" : 1 })
+> db.Player.insert({"Pname":"M.S.Dhoni","age":"47","Gname":"Cricket","Year":"2019"})
+WriteResult({ "nInserted" : 1 })
+> db.Player.insert({"Pname":"Sachin T.","age":"54","Gname":"Cricket","Year":"2019"})
+WriteResult({ "nInserted" : 1 })
+> db.Player.insert({"Pname":"R.Rashid","age":"23","Gname":"Football","Year":"2018"})
+WriteResult({ "nInserted" : 1 })
+> db.Player.insert({"Pname":"Virat Kohli","age":"23","Gname":"Cricket","Year":"2019"})
+WriteResult({ "nInserted" : 1 })
+> db.Player.insert({"Pname":"Messi","age":"22","Gname":"Football","Year":"2015"})
+WriteResult({ "nInserted" : 1 })
+> db.Player.insert({"Pname":"Wingston","age":"35","Gname":"Football","Year":"2015"})
+WriteResult({ "nInserted" : 1 })
+> db.Player.insert({"Pname":"Rahul sharma","age":"38","Gname":"Cricket","Year":"2019"})
+WriteResult({ "nInserted" : 1 })
+> db.Player.insert({"Pname":"Vijay","age":"30","Gname":"Cricket","Year":"2019"})
+WriteResult({ "nInserted" : 1 })
+> db.Player.insert({"Pname":"Saina Nehwal","age":"25","Gname":"Badminton","Year":"2019"})
+WriteResult({ "nInserted" : 1 })
+
+> db.Player.find().pretty()
+{
+        "_id" : ObjectId("5dda3abbd4ec526655512c9c"),
+        "Pname" : "Ronaldo",
+        "age" : "35",
+        "Gname" : "Football",
+        "Year" : "2019"
+}
+{
+        "_id" : ObjectId("5dda3ae1d4ec526655512c9d"),
+        "Pname" : "M.S.Dhoni",
+        "age" : "47",
+        "Gname" : "Cricket",
+        "Year" : "2019"
+}
+{
+        "_id" : ObjectId("5dda3af1d4ec526655512c9e"),
+        "Pname" : "Sachin T.",
+        "age" : "54",
+        "Gname" : "Cricket",
+        "Year" : "2019"
+}
+{
+        "_id" : ObjectId("5dda3b1dd4ec526655512c9f"),
+        "Pname" : "R.Rashid",
+        "age" : "23",
+        "Gname" : "Football",
+        "Year" : "2018"
+}
+{
+        "_id" : ObjectId("5dda3b3ed4ec526655512ca0"),
+        "Pname" : "Virat Kohli",
+        "age" : "23",
+        "Gname" : "Cricket",
+        "Year" : "2019"
+}
+{
+        "_id" : ObjectId("5dda3b72d4ec526655512ca1"),
+        "Pname" : "Messi",
+        "age" : "22",
+        "Gname" : "Football",
+        "Year" : "2015"
+}
+{
+        "_id" : ObjectId("5dda3b98d4ec526655512ca2"),
+        "Pname" : "Wingston",
+        "age" : "35",
+        "Gname" : "Football",
+        "Year" : "2015"
+}
+{
+        "_id" : ObjectId("5dda3bc8d4ec526655512ca3"),
+        "Pname" : "Rahul sharma",
+        "age" : "38",
+        "Gname" : "Cricket",
+        "Year" : "2019"
+}
+{
+        "_id" : ObjectId("5dda3bd9d4ec526655512ca4"),
+        "Pname" : "Vijay",
+        "age" : "30",
+        "Gname" : "Cricket",
+        "Year" : "2019"
+}
+{
+        "_id" : ObjectId("5dda3bf4d4ec526655512ca5"),
+        "Pname" : "Saina Nehwal",
+        "age" : "25",
+        "Gname" : "Badminton",
+        "Year" : "2019"
+}
+
+*****************
+
+Query1*******
+> db.Game.find({"Year":"2018"},{}).pretty()
+{
+        "_id" : ObjectId("5dda38a1d4ec526655512c95"),
+        "Gname" : "Cricket",
+        "Year" : "2018",
+        "Event" : "Indoor Cricket Wolrd Cup"
+}
+{
+        "_id" : ObjectId("5dda38e1d4ec526655512c96"),
+        "Gname" : "Cricket",
+        "Year" : "2018",
+        "Event" : "Blind Cricket World Cup"
+}
+{
+        "_id" : ObjectId("5dda397fd4ec526655512c9a"),
+        "Gname" : "Badminton",
+        "Year" : "2018",
+        "Event" : "Badminton BWF World Championship "
+}
+{
+        "_id" : ObjectId("5dda398bd4ec526655512c9b"),
+        "Gname" : "Badminton",
+        "Year" : "2018",
+        "Event" : "Badminton Thomas Cup"
+}
+
+Query2*****
+> db.Player.find({"age":{$gt:"23"}},{"Pname":1}).pretty()
+{ "_id" : ObjectId("5dda3abbd4ec526655512c9c"), "Pname" : "Ronaldo" }
+{ "_id" : ObjectId("5dda3ae1d4ec526655512c9d"), "Pname" : "M.S.Dhoni" }
+{ "_id" : ObjectId("5dda3af1d4ec526655512c9e"), "Pname" : "Sachin T." }
+{ "_id" : ObjectId("5dda3b98d4ec526655512ca2"), "Pname" : "Wingston" }
+{ "_id" : ObjectId("5dda3bc8d4ec526655512ca3"), "Pname" : "Rahul sharma" }
+{ "_id" : ObjectId("5dda3bd9d4ec526655512ca4"), "Pname" : "Vijay" }
+{ "_id" : ObjectId("5dda3bf4d4ec526655512ca5"), "Pname" : "Saina Nehwal" }
+
+Query3********
+> db.Game.find({"Gname":"Football","Year":"2015"},{"Event":1}).pretty()
+{ "_id" : ObjectId("5dda3907d4ec526655512c97"), "Event" : "FIFA World Cup" }
+{
+        "_id" : ObjectId("5dda3919d4ec526655512c98"),
+        "Event" : "FIFA Club World Cup"
+}
+{
+        "_id" : ObjectId("5dda3939d4ec526655512c99"),
+        "Event" : "ConIFA World Football Cup"
+}
+
+Query4***********
+> db.Player.find({"Gname":"Cricket","Year":"2019"},{"Pname":1}).pretty()
+{ "_id" : ObjectId("5dda3ae1d4ec526655512c9d"), "Pname" : "M.S.Dhoni" }
+{ "_id" : ObjectId("5dda3af1d4ec526655512c9e"), "Pname" : "Sachin T." }
+{ "_id" : ObjectId("5dda3b3ed4ec526655512ca0"), "Pname" : "Virat Kohli" }
+{ "_id" : ObjectId("5dda3bc8d4ec526655512ca3"), "Pname" : "Rahul sharma" }
+{ "_id" : ObjectId("5dda3bd9d4ec526655512ca4"), "Pname" : "Vijay" }
+

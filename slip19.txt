@@ -1,0 +1,232 @@
+**************
+> use Cosmetics
+switched to db Cosmetics
+> db.createCollection("Product",{})
+{ "ok" : 1 }
+> db.createCollection("Customer",{})
+{ "ok" : 1 }
+
+**************
+> db.Product.insert({"P_id":1,"P_name":"Lakme Lipstick","B_name":"Lakme","Expiry":"30-11-2019","rating":"5"})
+WriteResult({ "nInserted" : 1 })
+
+> var t=([{"P_id":2,"P_name":"Lakme Nail Paint","B_name":"Lakme","Expiry":"20-11-2019","rating":"2"},{"P_id":3,"P_name":"Maybelline Nail Paint","B_name":"Maybelline","Expiry":"1-1-2019","rating":"7"},{"P_id":4,"P_name":"Maybelline Kajal","B_name":"Maybelline","Expiry":"30-11-2019","rating":"4"},{"P_id":5,"P_name":"Maybelline Lipstick","B_name":"Maybelline","Expiry":"3-1-2018","rating":"5"},{"P_id":6,"P_name":"Himalya Kajal","B_name":"Himalya","Expiry":"1-11-2017","rating":"1"},{"P_id":7,"P_name":"Himalya Face Wash","B_name":"Himalya","Expiry":"23-10-2019","rating":"6"},{"P_id":8,"P_name":"Colossal Kajal","B_name":"Maybelline","Expiry":"30-11-2019","rating":"4"},{"P_id":9,"P_name":"Maybelline Kajal","B_name":"Colossal","Expiry":"4-4-2014","rating":"8"},{"P_id":10,"P_name":"Maybelline White Cream","B_name":"Maybelline","Expiry":"3-1-2018","rating":"3"}])
+> db.Product.insert(t)
+BulkWriteResult({
+	"writeErrors" : [ ],
+	"writeConcernErrors" : [ ],
+	"nInserted" : 9,
+	"nUpserted" : 0,
+	"nMatched" : 0,
+	"nModified" : 0,
+	"nRemoved" : 0,
+	"upserted" : [ ]
+})
+
+> db.Product.find().pretty()
+{
+	"_id" : ObjectId("5dd25dbc7566aa97ecfa9f0a"),
+	"P_id" : 1,
+	"P_name" : "Lakme Lipstick",
+	"B_name" : "Lakme",
+	"Expiry" : "30-11-2019",
+	"rating" : "5"
+}
+{
+	"_id" : ObjectId("5dd25fb37566aa97ecfa9f0b"),
+	"P_id" : 2,
+	"P_name" : "Lakme Nail Paint",
+	"B_name" : "Lakme",
+	"Expiry" : "20-11-2019",
+	"rating" : "2"
+}
+{
+	"_id" : ObjectId("5dd25fb37566aa97ecfa9f0c"),
+	"P_id" : 3,
+	"P_name" : "Maybelline Nail Paint",
+	"B_name" : "Maybelline",
+	"Expiry" : "1-1-2019",
+	"rating" : "7"
+}
+{
+	"_id" : ObjectId("5dd25fb37566aa97ecfa9f0d"),
+	"P_id" : 4,
+	"P_name" : "Maybelline Kajal",
+	"B_name" : "Maybelline",
+	"Expiry" : "30-11-2019",
+	"rating" : "4"
+}
+{
+	"_id" : ObjectId("5dd25fb37566aa97ecfa9f0e"),
+	"P_id" : 5,
+	"P_name" : "Maybelline Lipstick",
+	"B_name" : "Maybelline",
+	"Expiry" : "3-1-2018",
+	"rating" : "5"
+}
+{
+	"_id" : ObjectId("5dd25fb37566aa97ecfa9f0f"),
+	"P_id" : 6,
+	"P_name" : "Himalya Kajal",
+	"B_name" : "Himalya",
+	"Expiry" : "1-11-2017",
+	"rating" : "1"
+}
+{
+	"_id" : ObjectId("5dd25fb37566aa97ecfa9f10"),
+	"P_id" : 7,
+	"P_name" : "Himalya Face Wash",
+	"B_name" : "Himalya",
+	"Expiry" : "23-10-2019",
+	"rating" : "6"
+}
+{
+	"_id" : ObjectId("5dd25fb37566aa97ecfa9f11"),
+	"P_id" : 8,
+	"P_name" : "Colossal Kajal",
+	"B_name" : "Maybelline",
+	"Expiry" : "30-11-2019",
+	"rating" : "4"
+}
+{
+	"_id" : ObjectId("5dd25fb37566aa97ecfa9f12"),
+	"P_id" : 9,
+	"P_name" : "Maybelline Kajal",
+	"B_name" : "Colossal",
+	"Expiry" : "4-4-2014",
+	"rating" : "8"
+}
+{
+	"_id" : ObjectId("5dd25fb37566aa97ecfa9f13"),
+	"P_id" : 10,
+	"P_name" : "Maybelline White Cream",
+	"B_name" : "Maybelline",
+	"Expiry" : "3-1-2018",
+	"rating" : "3"
+}
+> 
+*******************
+> db.Customer.insert({"Cname":"Khushi","pname":"Colossal Kajal","rating":"4"})
+WriteResult({ "nInserted" : 1 })
+
+> var t1=([{"Cname":"Sarah","pname":"Maybelline Nail Paint","rating":"5"},{"Cname":"Geeta","pname":"Lakme Lipstick","rating":"3"},{"Cname":"Seeta","pname":"Maybelline Kajal","rating":"5"},{"Cname":"Hemlata","pname":"Maybelline White Cream","rating":"6"},{"Cname":"Preeti","pname":"Himalya Face Wash","rating":"4"},{"Cname":"Preeti","pname":"Maybelline Nail Paint","rating":"2"},{"Cname":"Neha","pname":"Himalya Kajal","rating":"7"},{"Cname":"Princy","pname":"Maybelline Nail Paint","rating":"3"},{"Cname":"Shreeji","pname":"Lakme Lipstick","rating":"8"},{"Cname":"Smily","pname":"Himalya Face Wash","rating":"1"}])
+> db.Customer.insert(t1)
+BulkWriteResult({
+	"writeErrors" : [ ],
+	"writeConcernErrors" : [ ],
+	"nInserted" : 10,
+	"nUpserted" : 0,
+	"nMatched" : 0,
+	"nModified" : 0,
+	"nRemoved" : 0,
+	"upserted" : [ ]
+})
+> 
+> db.Customer.find().pretty()
+{
+	"_id" : ObjectId("5dd261737566aa97ecfa9f14"),
+	"Cname" : "Khushi",
+	"pname" : "Colossal Kajal",
+	"rating" : "4"
+}
+{
+	"_id" : ObjectId("5dd263947566aa97ecfa9f15"),
+	"Cname" : "Sarah",
+	"pname" : "Maybelline Nail Paint",
+	"rating" : "5"
+}
+{
+	"_id" : ObjectId("5dd263947566aa97ecfa9f16"),
+	"Cname" : "Geeta",
+	"pname" : "Lakme Lipstick",
+	"rating" : "3"
+}
+{
+	"_id" : ObjectId("5dd263947566aa97ecfa9f17"),
+	"Cname" : "Seeta",
+	"pname" : "Maybelline Kajal",
+	"rating" : "5"
+}
+{
+	"_id" : ObjectId("5dd263947566aa97ecfa9f18"),
+	"Cname" : "Hemlata",
+	"pname" : "Maybelline White Cream",
+	"rating" : "6"
+}
+{
+	"_id" : ObjectId("5dd263947566aa97ecfa9f19"),
+	"Cname" : "Preeti",
+	"pname" : "Himalya Face Wash",
+	"rating" : "4"
+}
+{
+	"_id" : ObjectId("5dd263947566aa97ecfa9f1a"),
+	"Cname" : "Preeti",
+	"pname" : "Maybelline Nail Paint",
+	"rating" : "2"
+}
+{
+	"_id" : ObjectId("5dd263947566aa97ecfa9f1b"),
+	"Cname" : "Neha",
+	"pname" : "Himalya Kajal",
+	"rating" : "7"
+}
+{
+	"_id" : ObjectId("5dd263947566aa97ecfa9f1c"),
+	"Cname" : "Princy",
+	"pname" : "Maybelline Nail Paint",
+	"rating" : "3"
+}
+{
+	"_id" : ObjectId("5dd263947566aa97ecfa9f1d"),
+	"Cname" : "Shreeji",
+	"pname" : "Lakme Lipstick",
+	"rating" : "8"
+}
+{
+	"_id" : ObjectId("5dd263947566aa97ecfa9f1e"),
+	"Cname" : "Smily",
+	"pname" : "Himalya Face Wash",
+	"rating" : "1"
+}
+> 
+*****************
+Query1
+> db.Product.find({"Expiry":"30-11-2019"},{P_name:1})
+{ "_id" : ObjectId("5dd25dbc7566aa97ecfa9f0a"), "P_name" : "Lakme Lipstick" }
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f0d"), "P_name" : "Maybelline Kajal" }
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f11"), "P_name" : "Colossal Kajal" }
+
+Query2
+> db.Product.find({"rating":{$gt:"3"}},{"P_name":1,"B_name":1})
+{ "_id" : ObjectId("5dd25dbc7566aa97ecfa9f0a"), "P_name" : "Lakme Lipstick", "B_name" : "Lakme" }
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f0c"), "P_name" : "Maybelline Nail Paint", "B_name" : "Maybelline" }
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f0d"), "P_name" : "Maybelline Kajal", "B_name" : "Maybelline" }
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f0e"), "P_name" : "Maybelline Lipstick", "B_name" : "Maybelline" }
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f10"), "P_name" : "Himalya Face Wash", "B_name" : "Himalya" }
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f11"), "P_name" : "Colossal Kajal", "B_name" : "Maybelline" }
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f12"), "P_name" : "Maybelline Kajal", "B_name" : "Colossal" }
+
+Query3
+> db.Customer.find({"pname":{$in:["Lakme Lipstick","Maybelline Nail Paint"]}},{"Cname":1,"pname":1})
+{ "_id" : ObjectId("5dd263947566aa97ecfa9f15"), "Cname" : "Sarah", "pname" : "Maybelline Nail Paint" }
+{ "_id" : ObjectId("5dd263947566aa97ecfa9f16"), "Cname" : "Geeta", "pname" : "Lakme Lipstick" }
+{ "_id" : ObjectId("5dd263947566aa97ecfa9f1a"), "Cname" : "Preeti", "pname" : "Maybelline Nail Paint" }
+{ "_id" : ObjectId("5dd263947566aa97ecfa9f1c"), "Cname" : "Princy", "pname" : "Maybelline Nail Paint" }
+{ "_id" : ObjectId("5dd263947566aa97ecfa9f1d"), "Cname" : "Shreeji", "pname" : "Lakme Lipstick" }
+
+Query4
+> db.Product.find({},{"B_name":1,"P_name":1}).sort({"B_name":-1})
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f0c"), "P_name" : "Maybelline Nail Paint", "B_name" : "Maybelline" }
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f0d"), "P_name" : "Maybelline Kajal", "B_name" : "Maybelline" }
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f0e"), "P_name" : "Maybelline Lipstick", "B_name" : "Maybelline" }
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f11"), "P_name" : "Colossal Kajal", "B_name" : "Maybelline" }
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f13"), "P_name" : "Maybelline White Cream", "B_name" : "Maybelline" }
+{ "_id" : ObjectId("5dd25dbc7566aa97ecfa9f0a"), "P_name" : "Lakme Lipstick", "B_name" : "Lakme" }
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f0b"), "P_name" : "Lakme Nail Paint", "B_name" : "Lakme" }
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f0f"), "P_name" : "Himalya Kajal", "B_name" : "Himalya" }
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f10"), "P_name" : "Himalya Face Wash", "B_name" : "Himalya" }
+{ "_id" : ObjectId("5dd25fb37566aa97ecfa9f12"), "P_name" : "Maybelline Kajal", "B_name" : "Colossal" }
+
+****************
+

@@ -1,0 +1,272 @@
+**************
+> use Tour
+switched to db Tour
+> db.createCollection("TIndustry",{})
+{ "ok" : 1 }
+> db.createCollection("Customer",{})
+{ "ok" : 1 }
+***************
+> db.TIndustry.insert({"Tiname":"kesari","Pid":101,"Source":"Pune","Destination":"Lonavala","Expenses":"1000"})
+WriteResult({ "nInserted" : 1 })
+
+> var t=([{"Tiname":"kesari","Pid":103,"Source":"Pune","Destination":"Agra","Expenses":"10000"},{"Tiname":"kesari","Pid":105,"Source":"Mumbai","Destination":"Shillong","Expenses":"15000"},{"Tiname":"MyTour","Pid":102,"Source":"Delhi","Destination":"Kashmir","Expenses":"10582"},{"Tiname":"MyTour","Pid":104,"Source":"Delhi","Destination":"Manali","Expenses":"10500"},{"Tiname":"MyTour","Pid":106,"Source":"Pune","Destination":"Goa","Expenses":"10500"},{"Tiname":"HawaiTours","Pid":107,"Source":"Pune","Destination":"Shillong","Expenses":"102000"},{"Tiname":"HawaiTours","Pid":108,"Source":"Delhi","Destination":"Goa","Expenses":"10360"},{"Tiname":"HawaiTours","Pid":109,"Source":"Osmanabad","Destination":"Goa","Expenses":"108960"},{"Tiname":"FashionTours","Pid":110,"Source":"Agra","Destination":"Shillong","Expenses":"156500"}])
+> db.TIndustry.insert(t)
+BulkWriteResult({
+	"writeErrors" : [ ],
+	"writeConcernErrors" : [ ],
+	"nInserted" : 9,
+	"nUpserted" : 0,
+	"nMatched" : 0,
+	"nModified" : 0,
+	"nRemoved" : 0,
+	"upserted" : [ ]
+})
+> 
+> db.TIndustry.find().pretty()
+{
+	"_id" : ObjectId("5dd3897b71ae7783362f8562"),
+	"Tiname" : "kesari",
+	"Pid" : 103,
+	"Source" : "Pune",
+	"Destination" : "Agra",
+	"Expenses" : "10000"
+}
+{
+	"_id" : ObjectId("5dd3897b71ae7783362f8563"),
+	"Tiname" : "kesari",
+	"Pid" : 105,
+	"Source" : "Mumbai",
+	"Destination" : "Shillong",
+	"Expenses" : "15000"
+}
+{
+	"_id" : ObjectId("5dd3897b71ae7783362f8564"),
+	"Tiname" : "MyTour",
+	"Pid" : 102,
+	"Source" : "Delhi",
+	"Destination" : "Kashmir",
+	"Expenses" : "10582"
+}
+{
+	"_id" : ObjectId("5dd3897b71ae7783362f8565"),
+	"Tiname" : "MyTour",
+	"Pid" : 104,
+	"Source" : "Delhi",
+	"Destination" : "Manali",
+	"Expenses" : "10500"
+}
+{
+	"_id" : ObjectId("5dd3897b71ae7783362f8566"),
+	"Tiname" : "MyTour",
+	"Pid" : 106,
+	"Source" : "Pune",
+	"Destination" : "Goa",
+	"Expenses" : "10500"
+}
+{
+	"_id" : ObjectId("5dd3897b71ae7783362f8567"),
+	"Tiname" : "HawaiTours",
+	"Pid" : 107,
+	"Source" : "Pune",
+	"Destination" : "Shillong",
+	"Expenses" : "102000"
+}
+{
+	"_id" : ObjectId("5dd3897b71ae7783362f8568"),
+	"Tiname" : "HawaiTours",
+	"Pid" : 108,
+	"Source" : "Delhi",
+	"Destination" : "Goa",
+	"Expenses" : "10360"
+}
+{
+	"_id" : ObjectId("5dd3897b71ae7783362f8569"),
+	"Tiname" : "HawaiTours",
+	"Pid" : 109,
+	"Source" : "Osmanabad",
+	"Destination" : "Goa",
+	"Expenses" : "108960"
+}
+{
+	"_id" : ObjectId("5dd3897b71ae7783362f856a"),
+	"Tiname" : "FashionTours",
+	"Pid" : 110,
+	"Source" : "Agra",
+	"Destination" : "Shillong",
+	"Expenses" : "156500"
+}
+{
+	"_id" : ObjectId("5dd3899171ae7783362f856b"),
+	"Tiname" : "kesari",
+	"Pid" : 101,
+	"Source" : "Pune",
+	"Destination" : "Lonavala",
+	"Expenses" : "1000"
+}
+> 
+
+**********************
+> db.Customer.insert({"cname":"Sarah","Pid":110,"Tiname":"Kesari","rti":10})
+WriteResult({ "nInserted" : 1 })
+
+> var t1=([{"cname":"John","Pid":101,"Tiname":"Kesari","rti":5},{"cname":"John","Pid":102,"Tiname":"MyTour","rti":8},{"cname":"John","Pid":105,"Tiname":"Kesari","rti":10},{"cname":"Sarah","Pid":106,"Tiname":"Kesari","rti":4},{"cname":"Khushi","Pid":110,"Tiname":"MyTour","rti":10},{"cname":"Khushi","Pid":103,"Tiname":"FashionTours","rti":1},{"cname":"Rahul","Pid":104,"Tiname":"FashionTours","rti":3},{"cname":"Rahul","Pid":107,"Tiname":"HawaiTours","rti":5},{"cname":"Mitali","Pid":108,"Tiname":"HawaiTours","rti":4}])
+> db.Customer.insert(t1)
+BulkWriteResult({
+	"writeErrors" : [ ],
+	"writeConcernErrors" : [ ],
+	"nInserted" : 9,
+	"nUpserted" : 0,
+	"nMatched" : 0,
+	"nModified" : 0,
+	"nRemoved" : 0,
+	"upserted" : [ ]
+})
+> db.Customer.find().pretty()
+{
+	"_id" : ObjectId("5dd3908471ae7783362f858a"),
+	"cname" : "Sarah",
+	"Pid" : 110,
+	"Tiname" : "Kesari",
+	"rti" : 10
+}
+{
+	"_id" : ObjectId("5dd3911b71ae7783362f858b"),
+	"cname" : "John",
+	"Pid" : 101,
+	"Tiname" : "Kesari",
+	"rti" : 5
+}
+{
+	"_id" : ObjectId("5dd3911b71ae7783362f858c"),
+	"cname" : "John",
+	"Pid" : 102,
+	"Tiname" : "MyTour",
+	"rti" : 8
+}
+{
+	"_id" : ObjectId("5dd3911b71ae7783362f858d"),
+	"cname" : "John",
+	"Pid" : 105,
+	"Tiname" : "Kesari",
+	"rti" : 10
+}
+{
+	"_id" : ObjectId("5dd3911b71ae7783362f858e"),
+	"cname" : "Sarah",
+	"Pid" : 106,
+	"Tiname" : "Kesari",
+	"rti" : 4
+}
+{
+	"_id" : ObjectId("5dd3911b71ae7783362f858f"),
+	"cname" : "Khushi",
+	"Pid" : 110,
+	"Tiname" : "MyTour",
+	"rti" : 10
+}
+{
+	"_id" : ObjectId("5dd3911b71ae7783362f8590"),
+	"cname" : "Khushi",
+	"Pid" : 103,
+	"Tiname" : "FashionTours",
+	"rti" : 1
+}
+{
+	"_id" : ObjectId("5dd3911b71ae7783362f8591"),
+	"cname" : "Rahul",
+	"Pid" : 104,
+	"Tiname" : "FashionTours",
+	"rti" : 3
+}
+{
+	"_id" : ObjectId("5dd3911b71ae7783362f8592"),
+	"cname" : "Rahul",
+	"Pid" : 107,
+	"Tiname" : "HawaiTours",
+	"rti" : 5
+}
+{
+	"_id" : ObjectId("5dd3911b71ae7783362f8593"),
+	"cname" : "Mitali",
+	"Pid" : 108,
+	"Tiname" : "HawaiTours",
+	"rti" : 4
+}
+> 
+
+*******************
+Query1
+> db.TIndustry.find({"Tiname":"kesari"}).pretty()
+{
+	"_id" : ObjectId("5dd3897b71ae7783362f8562"),
+	"Tiname" : "kesari",
+	"Pid" : 103,
+	"Source" : "Pune",
+	"Destination" : "Agra",
+	"Expenses" : "10000"
+}
+{
+	"_id" : ObjectId("5dd3897b71ae7783362f8563"),
+	"Tiname" : "kesari",
+	"Pid" : 105,
+	"Source" : "Mumbai",
+	"Destination" : "Shillong",
+	"Expenses" : "15000"
+}
+{
+	"_id" : ObjectId("5dd3899171ae7783362f856b"),
+	"Tiname" : "kesari",
+	"Pid" : 101,
+	"Source" : "Pune",
+	"Destination" : "Lonavala",
+	"Expenses" : "1000"
+}
+******************
+Query2
+> db.Customer.find({},{"Tiname":1,"rti":1}).sort({"rti":-1}).limit(1)
+{ "_id" : ObjectId("5dd3908471ae7783362f858a"), "Tiname" : "Kesari", "rti" : 10 }
+
+******************
+Query3
+
+****Total Expenses are not displayed**********
+>  db.Customer.aggregate([{"$match":{"cname":"John"}},{"$lookup":{"from":"TIndustry","localField":"Pid","foreignField":"Pid","as":"Pack"}},{$project:{Pack:{"Source":1,"Destination":1,"Expenses":1}}}]).pretty()
+{
+	"_id" : ObjectId("5dd3911b71ae7783362f858b"),
+	"Pack" : [
+		{
+			"Source" : "Pune",
+			"Destination" : "Lonavala",
+			"Expenses" : "1000"
+		}
+	]
+}
+{
+	"_id" : ObjectId("5dd3911b71ae7783362f858c"),
+	"Pack" : [
+		{
+			"Source" : "Delhi",
+			"Destination" : "Kashmir",
+			"Expenses" : "10582"
+		}
+	]
+}
+{
+	"_id" : ObjectId("5dd3911b71ae7783362f858d"),
+	"Pack" : [
+		{
+			"Source" : "Mumbai",
+			"Destination" : "Shillong",
+			"Expenses" : "15000"
+		}
+	]
+}
+
+*******************
+Query4
+> db.TIndustry.aggregate([{"$match":{"Destination":"Shillong"}},{"$lookup":{"from":"Customer","localField":"Pid","foreignField":"Pid","as":"Pack"}},{$project:{Pack:{"cname":1}}}])
+{ "_id" : ObjectId("5dd3897b71ae7783362f8563"), "Pack" : [ { "cname" : "John" } ] }
+{ "_id" : ObjectId("5dd3897b71ae7783362f8567"), "Pack" : [ { "cname" : "Rahul" } ] }
+{ "_id" : ObjectId("5dd3897b71ae7783362f856a"), "Pack" : [ { "cname" : "Sarah" }, { "cname" : "Khushi" } ] }
+
+

@@ -1,0 +1,306 @@
+*********************
+> db.createCollection("Hospital",{})
+{ "ok" : 1 }
+> db.createCollection("Doctor",{})
+{ "ok" : 1 }
+> db.createCollection("People",{})
+{ "ok" : 1 }
+
+**********************
+> db.Hospital.insert({"h_id":1,"h_name":"Jehangir Hospital","Specialization":["Gynaec","Orthopaedic"],"Area":"Camp"})
+WriteResult({ "nInserted" : 1 })
+
+> var t=([{"h_id":2,"h_name":"Caring Hospital","Specialization":"Gynaec","Area":"Raviwar peth"},{"h_id":3,"h_name":"PLUS Hospital","Specialization":"Pediatric","Area":"Shaniwar peth"},{"h_id":4,"h_name":"K.E.M Hospital","Specialization":"Gynaec","Area":"Raviwar peth"},{"h_id":5,"h_name":"Life Hospital","Specialization":"Orthopaedic","Area":"camp"},{"h_id":6,"h_name":"Health Hospital","Specialization":"Gynaec","Area":"kondhwa"},{"h_id":7,"h_name":"City Hospital","Specialization":"Pediatric","Area":"kondhwa"},{"h_id":8,"h_name":"Sanjeevani Hospital","Specialization":"Gynaec","Area":"M.G.Road"},{"h_id":9,"h_name":"Kotnis Hospital","Specialization":"Orthopaedic","Area":"Raviwar peth"},{"h_id":10,"h_name":"Smile Care Hospital","Specialization":"Gynaec","Area":"Shukrawar peth"}])
+
+> db.Hospital.insert(t)
+BulkWriteResult({
+	"writeErrors" : [ ],
+	"writeConcernErrors" : [ ],
+	"nInserted" : 9,
+	"nUpserted" : 0,
+	"nMatched" : 0,
+	"nModified" : 0,
+	"nRemoved" : 0,
+	"upserted" : [ ]
+})
+
+> db.Hospital.find().pretty()
+{
+	"_id" : ObjectId("5dd2444d2b31951ff714635c"),
+	"h_id" : 1,
+	"h_name" : "Jehangir Hospital",
+	"Specialization" : [
+		"Gynaec",
+		"Orthopaedic"
+	],
+	"Area" : "Camp"
+}
+{
+	"_id" : ObjectId("5dd246632b31951ff714635d"),
+	"h_id" : 2,
+	"h_name" : "Caring Hospital",
+	"Specialization" : "Gynaec",
+	"Area" : "Raviwar peth"
+}
+{
+	"_id" : ObjectId("5dd246632b31951ff714635e"),
+	"h_id" : 3,
+	"h_name" : "PLUS Hospital",
+	"Specialization" : "Pediatric",
+	"Area" : "Shaniwar peth"
+}
+{
+	"_id" : ObjectId("5dd246632b31951ff714635f"),
+	"h_id" : 4,
+	"h_name" : "K.E.M Hospital",
+	"Specialization" : "Gynaec",
+	"Area" : "Raviwar peth"
+}
+{
+	"_id" : ObjectId("5dd246632b31951ff7146360"),
+	"h_id" : 5,
+	"h_name" : "Life Hospital",
+	"Specialization" : "Orthopaedic",
+	"Area" : "camp"
+}
+{
+	"_id" : ObjectId("5dd246632b31951ff7146361"),
+	"h_id" : 6,
+	"h_name" : "Health Hospital",
+	"Specialization" : "Gynaec",
+	"Area" : "kondhwa"
+}
+{
+	"_id" : ObjectId("5dd246632b31951ff7146362"),
+	"h_id" : 7,
+	"h_name" : "City Hospital",
+	"Specialization" : "Pediatric",
+	"Area" : "kondhwa"
+}
+{
+	"_id" : ObjectId("5dd246632b31951ff7146363"),
+	"h_id" : 8,
+	"h_name" : "Sanjeevani Hospital",
+	"Specialization" : "Gynaec",
+	"Area" : "M.G.Road"
+}
+{
+	"_id" : ObjectId("5dd246632b31951ff7146364"),
+	"h_id" : 9,
+	"h_name" : "Kotnis Hospital",
+	"Specialization" : "Orthopaedic",
+	"Area" : "Raviwar peth"
+}
+{
+	"_id" : ObjectId("5dd246632b31951ff7146365"),
+	"h_id" : 10,
+	"h_name" : "Smile Care Hospital",
+	"Specialization" : "Gynaec",
+	"Area" : "Shukrawar peth"
+}
+*************************
+> db.Doctor.insert({"d_id":10,"d_name":"Dr.Khushi","h_visit":"Jehangir Hospital","day":"Monday"})
+WriteResult({ "nInserted" : 1 })
+
+> var t1=([{"d_id":20,"d_name":"Dr.Sarah","h_visit":"Jehangir Hospital","day":["Monday","Wednesday"]},{"d_id":30,"d_name":"Dr.Rahul","h_visit":"K.E.M Hospital","day":"Wednesday"},{"d_id":40,"d_name":"Dr.Smily","h_visit":"Smile Care Hospital","day":"saturday"},{"d_id":50,"d_name":"Dr.Prince","h_visit":"Jehangir Hospital","day":["Monday","Wednesday"]},{"d_id":60,"d_name":"Dr.Seeta","h_visit":"Caring Hospital","day":"Friday"},{"d_id":70,"d_name":"Dr.Kumar","h_visit":"Life Hospital","day":"Monday"},{"d_id":80,"d_name":"Dr.kothari","h_visit":"Sanjeevani Hospital","day":["Monday","Thursday"]},{"d_id":90,"d_name":"Dr.Heena","h_visit":"Kotnis Hospital","day":["Saturday","Sunday"]},{"d_id":100,"d_name":"Dr.Hemlata","h_visit":"PLUS Hospital","day":"Sunday"}])
+> db.Doctor.insert(t1)
+BulkWriteResult({
+	"writeErrors" : [ ],
+	"writeConcernErrors" : [ ],
+	"nInserted" : 9,
+	"nUpserted" : 0,
+	"nMatched" : 0,
+	"nModified" : 0,
+	"nRemoved" : 0,
+	"upserted" : [ ]
+})
+> 
+> db.Doctor.find().pretty()
+{
+	"_id" : ObjectId("5dd24a467852b20048650987"),
+	"d_id" : 20,
+	"d_name" : "Dr.Sarah",
+	"h_visit" : "Jehangir Hospital",
+	"day" : [
+		"Monday",
+		"Wednesday"
+	]
+}
+{
+	"_id" : ObjectId("5dd24a467852b20048650988"),
+	"d_id" : 30,
+	"d_name" : "Dr.Rahul",
+	"h_visit" : "K.E.M Hospital",
+	"day" : "Wednesday"
+}
+{
+	"_id" : ObjectId("5dd24a467852b20048650989"),
+	"d_id" : 40,
+	"d_name" : "Dr.Smily",
+	"h_visit" : "Smile Care Hospital",
+	"day" : "saturday"
+}
+{
+	"_id" : ObjectId("5dd24a467852b2004865098a"),
+	"d_id" : 50,
+	"d_name" : "Dr.Prince",
+	"h_visit" : "Jehangir Hospital",
+	"day" : [
+		"Monday",
+		"Wednesday"
+	]
+}
+{
+	"_id" : ObjectId("5dd24a467852b2004865098b"),
+	"d_id" : 60,
+	"d_name" : "Dr.Seeta",
+	"h_visit" : "Caring Hospital",
+	"day" : "Friday"
+}
+{
+	"_id" : ObjectId("5dd24a467852b2004865098c"),
+	"d_id" : 70,
+	"d_name" : "Dr.Kumar",
+	"h_visit" : "Life Hospital",
+	"day" : "Monday"
+}
+{
+	"_id" : ObjectId("5dd24a467852b2004865098d"),
+	"d_id" : 80,
+	"d_name" : "Dr.kothari",
+	"h_visit" : "Sanjeevani Hospital",
+	"day" : [
+		"Monday",
+		"Thursday"
+	]
+}
+{
+	"_id" : ObjectId("5dd24a467852b2004865098e"),
+	"d_id" : 90,
+	"d_name" : "Dr.Heena",
+	"h_visit" : "Kotnis Hospital",
+	"day" : [
+		"Saturday",
+		"Sunday"
+	]
+}
+{
+	"_id" : ObjectId("5dd24a467852b2004865098f"),
+	"d_id" : 100,
+	"d_name" : "Dr.Hemlata",
+	"h_visit" : "PLUS Hospital",
+	"day" : "Sunday"
+}
+> 
+**************************
+> db.People.insert({"p_name":"Abdul","h_recommended":"Jehangir Hospital","rec_for":"Gynaec","rating":10})
+WriteResult({ "nInserted" : 1 })
+
+> var t2=([{"p_name":"Neha","h_recommended":"Jehangir Hospital","rec_for":"Gynaec","rating":2},{"p_name":"Pari","h_recommended":"Jehangir Hospital","rec_for":"Gynaec","rating":1},{"p_name":"Asma","h_recommended":"Kotnis Hospital","rec_for":"Orthopaedic","rating":5},{"p_name":"Abdul","h_recommended":"City Hospital","rec_for":"Paediatric","rating":6},{"p_name":"Urvashi","h_recommended":"PLUS Hospital","rec_for":"Gynaec","rating":10},{"p_name":"Nishant","h_recommended":"K.E.M Hospital","rec_for":"Gynaec","rating":3},{"p_name":"Arzoo","h_recommended":"Sanjeevani Hospital","rec_for":"Gynaec","rating":4},{"p_name":"Princess","h_recommended":"Smile Care Hospital","rec_for":"Gynaec","rating":7},{"p_name":"Abhinav","h_recommended":"Caring Hospital","rec_for":"Gynaec","rating":10}])
+> db.People.insert(t2)
+BulkWriteResult({
+	"writeErrors" : [ ],
+	"writeConcernErrors" : [ ],
+	"nInserted" : 9,
+	"nUpserted" : 0,
+	"nMatched" : 0,
+	"nModified" : 0,
+	"nRemoved" : 0,
+	"upserted" : [ ]
+})
+> 
+> db.People.find().pretty()
+{
+	"_id" : ObjectId("5dd24b497852b20048650990"),
+	"p_name" : "Abdul",
+	"h_recommended" : "Jehangir Hospital",
+	"rec_for" : "Gynaec",
+	"rating" : 10
+}
+{
+	"_id" : ObjectId("5dd24d097852b20048650991"),
+	"p_name" : "Neha",
+	"h_recommended" : "Jehangir Hospital",
+	"rec_for" : "Gynaec",
+	"rating" : 2
+}
+{
+	"_id" : ObjectId("5dd24d097852b20048650992"),
+	"p_name" : "Pari",
+	"h_recommended" : "Jehangir Hospital",
+	"rec_for" : "Gynaec",
+	"rating" : 1
+}
+{
+	"_id" : ObjectId("5dd24d097852b20048650993"),
+	"p_name" : "Asma",
+	"h_recommended" : "Kotnis Hospital",
+	"rec_for" : "Orthopaedic",
+	"rating" : 5
+}
+{
+	"_id" : ObjectId("5dd24d097852b20048650994"),
+	"p_name" : "Abdul",
+	"h_recommended" : "City Hospital",
+	"rec_for" : "Paediatric",
+	"rating" : 6
+}
+{
+	"_id" : ObjectId("5dd24d097852b20048650995"),
+	"p_name" : "Urvashi",
+	"h_recommended" : "PLUS Hospital",
+	"rec_for" : "Gynaec",
+	"rating" : 10
+}
+{
+	"_id" : ObjectId("5dd24d097852b20048650996"),
+	"p_name" : "Nishant",
+	"h_recommended" : "K.E.M Hospital",
+	"rec_for" : "Gynaec",
+	"rating" : 3
+}
+{
+	"_id" : ObjectId("5dd24d097852b20048650997"),
+	"p_name" : "Arzoo",
+	"h_recommended" : "Sanjeevani Hospital",
+	"rec_for" : "Gynaec",
+	"rating" : 4
+}
+{
+	"_id" : ObjectId("5dd24d097852b20048650998"),
+	"p_name" : "Princess",
+	"h_recommended" : "Smile Care Hospital",
+	"rec_for" : "Gynaec",
+	"rating" : 7
+}
+{
+	"_id" : ObjectId("5dd24d097852b20048650999"),
+	"p_name" : "Abhinav",
+	"h_recommended" : "Caring Hospital",
+	"rec_for" : "Gynaec",
+	"rating" : 10
+}
+
+*************************
+Query1
+db.Hospital.find({"Specialization":"Pediatric"},"h_name":1)
+{ "_id" : ObjectId("5dd246632b31951ff714635e"), "h_name" : "PLUS Hospital" }
+{ "_id" : ObjectId("5dd246632b31951ff7146362"), "h_name" : "City Hospital" }
+
+Query2
+> db.Doctor.find({"h_visit":"Jehangir Hospital","day":"Monday"},{d_name:1})
+{ "_id" : ObjectId("5dd247a72b31951ff7146366"), "d_name" : "Dr.Khushi" }
+{ "_id" : ObjectId("5dd24f447566aa97ecfa9ef7"), "d_name" : "Dr.Sarah" }
+{ "_id" : ObjectId("5dd24f447566aa97ecfa9efa"), "d_name" : "Dr.Prince" }
+
+Query3
+> db.People.find({"rec_for":"Gynaec"},{"h_recommended":"1"}).sort({"rec_for":1}).limit(1)
+{ "_id" : ObjectId("5dd24f677566aa97ecfa9f00"), "h_recommended" : "Jehangir Hospital" }
+
+Query4
+> db.People.find({"h_recommended":"Jehangir Hospital","rating":{$gte:3}},{"p_name":1})
+{ "_id" : ObjectId("5dd24f677566aa97ecfa9f00"), "p_name" : "Abdul" }
+
+
+
+

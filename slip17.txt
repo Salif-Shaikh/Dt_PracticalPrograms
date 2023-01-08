@@ -1,0 +1,208 @@
+****************
+> use Mobile
+switched to db Mobile
+> db.createCollection("Mobile",{})
+{ "ok" : 1 }
+> db.createCollection("customer",{})
+{ "ok" : 1 }
+
+*******************
+> db.Mobile.insert({"Mname":"Samsung J1","RAM":"3GB","ROM":"32GB","Brand":"Samsung"})
+WriteResult({ "nInserted" : 1 })
+
+> var t=([{"Mname":"Samsung J2","RAM":"3GB","ROM":"16GB","Brand":"Samsung"},{"Mname":"Samsung J3","RAM":"4GB","ROM":"32GB","Brand":"Samsung"},{"Mname":"Samsung J6","RAM":"6GB","ROM":"64GB","Brand":"Samsung"},{"Mname":"Vivo Y55S","RAM":"3GB","ROM":"32GB","Brand":"Vivo"},{"Mname":"Vivo V5","RAM":"4GB","ROM":"64GB","Brand":"Vivo"},{"Mname":"Oppo Pro","RAM":"6GB","ROM":"32GB","Brand":"Oppo"},{"Mname":" iPhone 5 pro","RAM":"8GB","ROM":"64GB","Brand":"iPhone"},{"Mname":"iPhone 6","RAM":"8GB","ROM":"64GB","Brand":"iPhone"},{"Mname":"iPhone  7plus","RAM":"8GB","ROM":"64GB","Brand":"iPhone"}])
+> db.Mobile.insert(t)
+BulkWriteResult({
+	"writeErrors" : [ ],
+	"writeConcernErrors" : [ ],
+	"nInserted" : 9,
+	"nUpserted" : 0,
+	"nMatched" : 0,
+	"nModified" : 0,
+	"nRemoved" : 0,
+	"upserted" : [ ]
+})
+
+> db.Mobile.find().pretty()
+{
+	"_id" : ObjectId("5dd396ed71ae7783362f8594"),
+	"Mname" : "Samsung J1",
+	"RAM" : "3GB",
+	"ROM" : "32GB",
+	"Brand" : "Samsung"
+}
+{
+	"_id" : ObjectId("5dd3985f71ae7783362f8595"),
+	"Mname" : "Samsung J2",
+	"RAM" : "3GB",
+	"ROM" : "16GB",
+	"Brand" : "Samsung"
+}
+{
+	"_id" : ObjectId("5dd3985f71ae7783362f8596"),
+	"Mname" : "Samsung J3",
+	"RAM" : "4GB",
+	"ROM" : "32GB",
+	"Brand" : "Samsung"
+}
+{
+	"_id" : ObjectId("5dd3985f71ae7783362f8597"),
+	"Mname" : "Samsung J6",
+	"RAM" : "6GB",
+	"ROM" : "64GB",
+	"Brand" : "Samsung"
+}
+{
+	"_id" : ObjectId("5dd3985f71ae7783362f8598"),
+	"Mname" : "Vivo Y55S",
+	"RAM" : "3GB",
+	"ROM" : "32GB",
+	"Brand" : "Vivo"
+}
+{
+	"_id" : ObjectId("5dd3985f71ae7783362f8599"),
+	"Mname" : "Vivo V5",
+	"RAM" : "4GB",
+	"ROM" : "64GB",
+	"Brand" : "Vivo"
+}
+{
+	"_id" : ObjectId("5dd3985f71ae7783362f859a"),
+	"Mname" : "Oppo Pro",
+	"RAM" : "6GB",
+	"ROM" : "32GB",
+	"Brand" : "Oppo"
+}
+{
+	"_id" : ObjectId("5dd3985f71ae7783362f859b"),
+	"Mname" : " iPhone 5 pro",
+	"RAM" : "8GB",
+	"ROM" : "64GB",
+	"Brand" : "iPhone"
+}
+{
+	"_id" : ObjectId("5dd3985f71ae7783362f859c"),
+	"Mname" : "iPhone 6",
+	"RAM" : "8GB",
+	"ROM" : "64GB",
+	"Brand" : "iPhone"
+}
+{
+	"_id" : ObjectId("5dd3985f71ae7783362f859d"),
+	"Mname" : "iPhone  7plus",
+	"RAM" : "8GB",
+	"ROM" : "64GB",
+	"Brand" : "iPhone"
+}
+> 
+*********************************
+> db.Customer.insert({"cname":"Sarah","Mname":"Samsung J6","Mrate":6,"Brate":10})
+WriteResult({ "nInserted" : 1 })
+
+> var t1=([{"cname":"Sarah","Mname":"iPhone 7plus","Mrate":10,"Brate":10},{"cname":"Khushi","Mname":"Samsung J6","Mrate":6,"Brate":10},{"cname":"Khushi","Mname":"iPhone 7plus","Mrate":6,"Brate":10},{"cname":"Rahul","Mname":"Vivo V5","Mrate":6,"Brate":3},{"cname":"Rahul","Mname":"Vivo Y55S","Mrate":5,"Brate":5},{"cname":"Mitali","Mname":"Vivo Y55S","Mrate":4,"Brate":8},{"cname":"Mitali","Mname":"iPhone 7plus","Mrate":6,"Brate":6},{"cname":"Neha","Mname":"Oppo Pro","Mrate":6,"Brate":9},{"cname":"Neha","Mname":"iPhone 6","Mrate":6,"Brate":7}])
+> db.Customer.insert(t1)
+BulkWriteResult({
+	"writeErrors" : [ ],
+	"writeConcernErrors" : [ ],
+	"nInserted" : 9,
+	"nUpserted" : 0,
+	"nMatched" : 0,
+	"nModified" : 0,
+	"nRemoved" : 0,
+	"upserted" : [ ]
+})
+> 
+> db.Customer.find().pretty()
+{
+	"_id" : ObjectId("5dd39ba56b92ee58778b7531"),
+	"cname" : "Sarah",
+	"Mname" : "Samsung J6",
+	"Mrate" : 6,
+	"Brate" : 10
+}
+{
+	"_id" : ObjectId("5dd39cf26b92ee58778b7532"),
+	"cname" : "Sarah",
+	"Mname" : "iPhone 7plus",
+	"Mrate" : 10,
+	"Brate" : 10
+}
+{
+	"_id" : ObjectId("5dd39cf26b92ee58778b7533"),
+	"cname" : "Khushi",
+	"Mname" : "Samsung J6",
+	"Mrate" : 6,
+	"Brate" : 10
+}
+{
+	"_id" : ObjectId("5dd39cf26b92ee58778b7534"),
+	"cname" : "Khushi",
+	"Mname" : "iPhone 7plus",
+	"Mrate" : 6,
+	"Brate" : 10
+}
+{
+	"_id" : ObjectId("5dd39cf26b92ee58778b7535"),
+	"cname" : "Rahul",
+	"Mname" : "Vivo V5",
+	"Mrate" : 6,
+	"Brate" : 3
+}
+{
+	"_id" : ObjectId("5dd39cf26b92ee58778b7536"),
+	"cname" : "Rahul",
+	"Mname" : "Vivo Y55S",
+	"Mrate" : 5,
+	"Brate" : 5
+}
+{
+	"_id" : ObjectId("5dd39cf26b92ee58778b7537"),
+	"cname" : "Mitali",
+	"Mname" : "Vivo Y55S",
+	"Mrate" : 4,
+	"Brate" : 8
+}
+{
+	"_id" : ObjectId("5dd39cf26b92ee58778b7538"),
+	"cname" : "Mitali",
+	"Mname" : "iPhone 7plus",
+	"Mrate" : 6,
+	"Brate" : 6
+}
+{
+	"_id" : ObjectId("5dd39cf26b92ee58778b7539"),
+	"cname" : "Neha",
+	"Mname" : "Oppo Pro",
+	"Mrate" : 6,
+	"Brate" : 9
+}
+{
+	"_id" : ObjectId("5dd39cf26b92ee58778b753a"),
+	"cname" : "Neha",
+	"Mname" : "iPhone 6",
+	"Mrate" : 6,
+	"Brate" : 7
+}
+> 
+**************************
+Query1
+> db.Mobile.find({"RAM":"3GB","ROM":"32GB"},{"Mname":1})
+{ "_id" : ObjectId("5dd39a9dab431fc9f16b1f68"), "Mname" : "Samsung J1" }
+{ "_id" : ObjectId("5dd39ab2ab431fc9f16b1f6c"), "Mname" : "Vivo Y55S" }
+
+Query2
+> db.Customer.find({"Mname":"Samsung J6"},{"cname":1})
+{ "_id" : ObjectId("5dd39ba56b92ee58778b7531"), "cname" : "Sarah" }
+{ "_id" : ObjectId("5dd39cf26b92ee58778b7533"), "cname" : "Khushi" }
+
+Query3
+//////Missing/////////////
+
+Query4
+> db.Customer.find({"Mname":"iPhone 7plus"},{"cname":1}).sort({"cname":1})
+{ "_id" : ObjectId("5dd39cf26b92ee58778b7534"), "cname" : "Khushi" }
+{ "_id" : ObjectId("5dd39cf26b92ee58778b7538"), "cname" : "Mitali" }
+{ "_id" : ObjectId("5dd39cf26b92ee58778b7532"), "cname" : "Sarah" }
+
+
+

@@ -1,0 +1,219 @@
+******************
+> use Footware
+switched to db Footware
+> db.createCollection("Footware_brand",{})
+{ "ok" : 1 }
+> db.createCollection("Customer",{})
+{ "ok" : 1 }
+**********************
+> db.Footware_brand.insert({"Bid":101,"Bname":"BATA","ftype":"Shoes"})
+WriteResult({ "nInserted" : 1 })
+> db.Footware_brand.insert({"Bid":102,"Bname":"BATA","ftype":"Slipper"})
+WriteResult({ "nInserted" : 1 })
+> db.Footware_brand.insert({"Bid":103,"Bname":"BATA","ftype":"Sandal"})
+WriteResult({ "nInserted" : 1 })
+> db.Footware_brand.insert({"Bid":104,"Bname":"Sparx","ftype":"Shoes"})
+WriteResult({ "nInserted" : 1 })
+> db.Footware_brand.insert({"Bid":105,"Bname":"Nike","ftype":"Shoes"})
+WriteResult({ "nInserted" : 1 })
+> db.Footware_brand.insert({"Bid":106,"Bname":"Adidas","ftype":"Shoes"})
+WriteResult({ "nInserted" : 1 })
+> db.Footware_brand.insert({"Bid":107,"Bname":"Gucci","ftype":"Shoes"})
+WriteResult({ "nInserted" : 1 })
+> db.Footware_brand.insert({"Bid":108,"Bname":"Puma","ftype":"Shoes"})
+WriteResult({ "nInserted" : 1 })
+> db.Footware_brand.insert({"Bid":109,"Bname":"Fendi","ftype":"Slipper"})
+WriteResult({ "nInserted" : 1 })
+> db.Footware_brand.insert({"Bid":110,"Bname":"Fendi","ftype":"Sandal"})
+WriteResult({ "nInserted" : 1 })
+> db.Footware_brand.insert({"Bid":111,"Bname":"Sparx","ftype":"Slipper"})
+WriteResult({ "nInserted" : 1 })
+> db.Footware_brand.find().pretty()
+{
+        "_id" : ObjectId("5dda4267d4ec526655512ca6"),
+        "Bid" : 101,
+        "Bname" : "BATA",
+        "ftype" : "Shoes"
+}
+{
+        "_id" : ObjectId("5dda42a3d4ec526655512ca7"),
+        "Bid" : 102,
+        "Bname" : "BATA",
+        "ftype" : "Slipper"
+}
+{
+        "_id" : ObjectId("5dda42c8d4ec526655512ca8"),
+        "Bid" : 103,
+        "Bname" : "BATA",
+        "ftype" : "Sandal"
+}
+{
+        "_id" : ObjectId("5dda42e4d4ec526655512ca9"),
+        "Bid" : 104,
+        "Bname" : "Sparx",
+        "ftype" : "Shoes"
+}
+{
+        "_id" : ObjectId("5dda42f2d4ec526655512caa"),
+        "Bid" : 105,
+        "Bname" : "Nike",
+        "ftype" : "Shoes"
+}
+{
+        "_id" : ObjectId("5dda42fdd4ec526655512cab"),
+        "Bid" : 106,
+        "Bname" : "Adidas",
+        "ftype" : "Shoes"
+}
+{
+        "_id" : ObjectId("5dda4309d4ec526655512cac"),
+        "Bid" : 107,
+        "Bname" : "Gucci",
+        "ftype" : "Shoes"
+}
+{
+        "_id" : ObjectId("5dda4322d4ec526655512cad"),
+        "Bid" : 108,
+        "Bname" : "Puma",
+        "ftype" : "Shoes"
+}
+{
+        "_id" : ObjectId("5dda433cd4ec526655512cae"),
+        "Bid" : 109,
+        "Bname" : "Fendi",
+        "ftype" : "Slipper"
+}
+{
+        "_id" : ObjectId("5dda434cd4ec526655512caf"),
+        "Bid" : 110,
+        "Bname" : "Fendi",
+        "ftype" : "Sandal"
+}
+{
+        "_id" : ObjectId("5dda437dd4ec526655512cb0"),
+        "Bid" : 111,
+        "Bname" : "Sparx",
+        "ftype" : "Slipper"
+}
+*******************
+> db.Customer.insert({"Cname":"Sarah","ftype":"Slipper","Bname":"BATA","rating":5})
+WriteResult({ "nInserted" : 1 })
+> db.Customer.insert({"Cname":"Sarah","ftype":"Shoes","Bname":"BATA","rating":10})
+WriteResult({ "nInserted" : 1 })
+> db.Customer.insert({"Cname":"Khushi","ftype":"Sandal","Bname":"Adidas","rating":2})
+WriteResult({ "nInserted" : 1 })
+> db.Customer.insert({"Cname":"Neha","ftype":"Sandal","Bname":"Puma","rating":5})
+WriteResult({ "nInserted" : 1 })
+> db.Customer.insert({"Cname":"Sarah","ftype":"Slipper","Bname":"Sparx","rating":7})
+WriteResult({ "nInserted" : 1 })
+> db.Customer.insert({"Cname":"Sneha","ftype":"Slipper","Bname":"Sparx","rating":10})
+WriteResult({ "nInserted" : 1 })
+> db.Customer.insert({"Cname":"Preeti","ftype":"Slipper","Bname":"Sparx","rating":1})
+WriteResult({ "nInserted" : 1 })
+> db.Customer.insert({"Cname":"Sarah","ftype":"Sandal","Bname":"Puma","rating":1})
+WriteResult({ "nInserted" : 1 })
+> db.Customer.insert({"Cname":"Rahul","ftype":"Sandal","Bname":"Fendi","rating":9})
+WriteResult({ "nInserted" : 1 })
+> db.Customer.insert({"Cname":"Raheja","ftype":"Sandal","Bname":"Fendi","rating":8})
+WriteResult({ "nInserted" : 1 })
+> db.Customer.find().pretty()
+{
+        "_id" : ObjectId("5dda458fd4ec526655512cb1"),
+        "Cname" : "Sarah",
+        "ftype" : "Slipper",
+        "Bname" : "BATA",
+        "rating" : 5
+}
+{
+        "_id" : ObjectId("5dda45a8d4ec526655512cb2"),
+        "Cname" : "Sarah",
+        "ftype" : "Shoes",
+        "Bname" : "BATA",
+        "rating" : 10
+}
+{
+        "_id" : ObjectId("5dda45c4d4ec526655512cb3"),
+        "Cname" : "Khushi",
+        "ftype" : "Sandal",
+        "Bname" : "Adidas",
+        "rating" : 2
+}
+{
+        "_id" : ObjectId("5dda45dcd4ec526655512cb4"),
+        "Cname" : "Neha",
+        "ftype" : "Sandal",
+        "Bname" : "Puma",
+        "rating" : 5
+}
+{
+        "_id" : ObjectId("5dda4606d4ec526655512cb5"),
+        "Cname" : "Sarah",
+        "ftype" : "Slipper",
+        "Bname" : "Sparx",
+        "rating" : 7
+}
+{
+        "_id" : ObjectId("5dda4616d4ec526655512cb6"),
+        "Cname" : "Sneha",
+        "ftype" : "Slipper",
+        "Bname" : "Sparx",
+        "rating" : 10
+}
+{
+        "_id" : ObjectId("5dda4621d4ec526655512cb7"),
+        "Cname" : "Preeti",
+        "ftype" : "Slipper",
+        "Bname" : "Sparx",
+        "rating" : 1
+}
+{
+        "_id" : ObjectId("5dda4656d4ec526655512cb8"),
+        "Cname" : "Sarah",
+        "ftype" : "Sandal",
+        "Bname" : "Puma",
+        "rating" : 1
+}
+{
+        "_id" : ObjectId("5dda4676d4ec526655512cb9"),
+        "Cname" : "Rahul",
+        "ftype" : "Sandal",
+        "Bname" : "Fendi",
+        "rating" : 9
+}
+{
+        "_id" : ObjectId("5dda4688d4ec526655512cba"),
+        "Cname" : "Raheja",
+        "ftype" : "Sandal",
+        "Bname" : "Fendi",
+        "rating" : 8
+}
+**********************
+Query1******
+> db.Footware_brand.find({},{"Bname":1})
+{ "_id" : ObjectId("5dda4267d4ec526655512ca6"), "Bname" : "BATA" }
+{ "_id" : ObjectId("5dda42a3d4ec526655512ca7"), "Bname" : "BATA" }
+{ "_id" : ObjectId("5dda42c8d4ec526655512ca8"), "Bname" : "BATA" }
+{ "_id" : ObjectId("5dda42e4d4ec526655512ca9"), "Bname" : "Sparx" }
+{ "_id" : ObjectId("5dda42f2d4ec526655512caa"), "Bname" : "Nike" }
+{ "_id" : ObjectId("5dda42fdd4ec526655512cab"), "Bname" : "Adidas" }
+{ "_id" : ObjectId("5dda4309d4ec526655512cac"), "Bname" : "Gucci" }
+{ "_id" : ObjectId("5dda4322d4ec526655512cad"), "Bname" : "Puma" }
+{ "_id" : ObjectId("5dda433cd4ec526655512cae"), "Bname" : "Fendi" }
+{ "_id" : ObjectId("5dda434cd4ec526655512caf"), "Bname" : "Fendi" }
+{ "_id" : ObjectId("5dda437dd4ec526655512cb0"), "Bname" : "Sparx" }
+
+Query2*********
+> db.Footware_brand.find({"Bname":"BATA"},{})
+{ "_id" : ObjectId("5dda4267d4ec526655512ca6"), "Bid" : 101, "Bname" : "BATA", "ftype" : "Shoes" }
+{ "_id" : ObjectId("5dda42a3d4ec526655512ca7"), "Bid" : 102, "Bname" : "BATA", "ftype" : "Slipper" }
+{ "_id" : ObjectId("5dda42c8d4ec526655512ca8"), "Bid" : 103, "Bname" : "BATA", "ftype" : "Sandal" }
+
+Query3*********
+> db.Customer.find({"Bname":"Sparx","ftype":"Slipper"},{"Cname":1})
+{ "_id" : ObjectId("5dda4606d4ec526655512cb5"), "Cname" : "Sarah" }
+{ "_id" : ObjectId("5dda4616d4ec526655512cb6"), "Cname" : "Sneha" }
+{ "_id" : ObjectId("5dda4621d4ec526655512cb7"), "Cname" : "Preeti" }
+
+Query4*************
+Missing*
+
